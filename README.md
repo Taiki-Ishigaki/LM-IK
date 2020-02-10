@@ -3,11 +3,11 @@ Solvability-unconcerned Inverse Kinematics by Levenberg-Marquardt Method
 
 Levenberg-Marquardt法による可解性を問わない逆運動学の実装
 - script
-  - lmik.py
+  - lmik.py  
     2次元平面で2自由度アームの逆運動学計算
-  - lmik_3d.py
+  - lmik_3d.py  
     2次元平面で3自由度アームの逆運動学計算
-  - lmik_3d_3task.py
+  - lmik_3d_3task.py  
     2次元平面で3自由度アームで位置姿勢のタスクを与えた逆運動学計算
 
 ## Reference 
