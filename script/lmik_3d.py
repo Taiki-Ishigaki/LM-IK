@@ -4,14 +4,13 @@ import matplotlib.pyplot as plt
 import matplotlib.animation as animation
 
 class ARM3DOF(object):
-    joint_dof_ = 3
-    task_dof_ = 2
-    L1 = 1
-    L2 = 1
-    L3 = 1
 
     def __init__(self):
-        a = 0
+        self.joint_dof_ = 3 # joint dof
+        self.task_dof_ = 2 # task dof
+        self.L1 = 1 # length of 1st link
+        self.L2 = 1 # length of 2nd link
+        self.L3 = 1 # length of 3rd link
     
     def kinematics(self, q):
         x = np.zeros((self.task_dof_, 1))
@@ -134,8 +133,8 @@ def video(robot, q1, q2, q3, t, fig):
 
     ani = animation.FuncAnimation(fig, animate, frames=range(200),
                                   interval=t*100, blit=False, init_func=init)
-    #plt.show()
-    ani.save("output.gif", writer="imagemagick")
+    plt.show()
+    #ani.save("output.gif", writer="imagemagick")
 
 def plan_orbit(t):
     if t >= 0 and t < np.pi:

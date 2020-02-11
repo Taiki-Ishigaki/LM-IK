@@ -4,13 +4,12 @@ import matplotlib.pyplot as plt
 import matplotlib.animation as animation
 
 class ARM2DOF(object):
-    joint_dof_ = 2
-    task_dof_ = 2
-    L1 = 1
-    L2 = 1
 
     def __init__(self):
-        a = 0
+        self.joint_dof_ = 2 # joint dof
+        self.task_dof_ = 2 # task dof
+        self.L1 = 1 # length of 1st link
+        self.L2 = 1 # length of 2nd link
     
     def kinematics(self, q):
         x = np.zeros((self.task_dof_, 1))
@@ -120,8 +119,8 @@ def video(robot, q1, q2, t, fig):
 
     ani = animation.FuncAnimation(fig, animate, frames=range(400),
                                   interval=t*100, blit=False, init_func=init)
-    #plt.show()
-    ani.save("output.gif", writer="imagemagick")
+    plt.show()
+    #ani.save("output.gif", writer="imagemagick")
 
 def plan_orbit1(x):
     y = -1/2*(x**2) + 2
